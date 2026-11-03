@@ -29,7 +29,7 @@ $pageTitle = isset($pageTitle) ? $pageTitle . ' — LangkapuraLokal' : 'Langkapu
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Bootstrap 5.3 CSS & Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.php" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css';">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
   <!-- Custom Design System -->
@@ -49,32 +49,42 @@ $pageTitle = isset($pageTitle) ? $pageTitle . ' — LangkapuraLokal' : 'Langkapu
   <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
     <div class="container">
       <a class="navbar-brand" href="<?= $base ?>/index.php">
-        <i class="bi bi-shop-window text-success fs-3"></i>
-        <span>Langkapura<span style="color: #2E8B57;">Lokal</span></span>
+        <div class="brand-icon-wrapper">
+          <i class="bi bi-shop-window"></i>
+        </div>
+        <span class="brand-text">Langkapura<span class="brand-text-accent">Lokal</span></span>
         <span class="brand-badge d-none d-sm-inline-block">Direktori UMKM</span>
       </a>
 
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigasi">
+      <button class="navbar-toggler border-0 shadow-none px-2" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigasi">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-menu-links">
           <li class="nav-item">
-            <a class="nav-link <?= (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'active' : '' ?>" href="<?= $base ?>/index.php">Beranda</a>
+            <a class="nav-link <?= (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'active' : '' ?>" href="<?= $base ?>/index.php">
+              <i class="bi bi-house-door me-1 d-lg-none"></i> Beranda
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= (basename($_SERVER['PHP_SELF']) == 'katalog.php') ? 'active' : '' ?>" href="<?= $base ?>/katalog.php">Jelajahi Usaha</a>
+            <a class="nav-link <?= (basename($_SERVER['PHP_SELF']) == 'katalog.php') ? 'active' : '' ?>" href="<?= $base ?>/katalog.php">
+              <i class="bi bi-compass me-1 d-lg-none"></i> Jelajahi Usaha
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= $base ?>/index.php#kategori">Kategori</a>
+            <a class="nav-link" href="<?= $base ?>/index.php#kategori">
+              <i class="bi bi-tags me-1 d-lg-none"></i> Kategori
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= $base ?>/index.php#cara-kerja">Cara Kerja</a>
+            <a class="nav-link" href="<?= $base ?>/index.php#cara-kerja">
+              <i class="bi bi-info-circle me-1 d-lg-none"></i> Cara Kerja
+            </a>
           </li>
         </ul>
 
-        <div class="d-flex align-items-center gap-2 flex-wrap">
+        <div class="nav-actions d-flex align-items-center gap-2 flex-wrap flex-lg-nowrap">
           <?php if (isLoggedIn()): ?>
             <?php if (isAdmin()): ?>
               <a href="<?= $base ?>/admin/index.php" class="btn btn-outline-custom btn-sm">
