@@ -1,0 +1,492 @@
+/* =========================================================
+   LangkapuraLokal - Design System
+   Sesuai Spesifikasi desaind.md:
+   - Warna Utama: #176B45 (Forest Green)
+   - Warna Aksen: #2E8B57 (Sea Green)
+   - Latar: #F4F7F5 (Soft Green-Gray) & #FFFFFF
+   - Font: Plus Jakarta Sans (Headings), Inter (Body)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+:root {
+  --primary-color: #176B45;
+  --primary-hover: #115335;
+  --accent-color: #2E8B57;
+  --accent-light: #E8F5EE;
+  --bg-soft: #F4F7F5;
+  --bg-card: #FFFFFF;
+  --text-main: #1F2937;
+  --text-muted: #6B7280;
+  --text-heading: #133827;
+  --border-color: #E2E8F0;
+  --border-focus: #2E8B57;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 14px rgba(23, 107, 69, 0.08);
+  --shadow-lg: 0 10px 25px rgba(23, 107, 69, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --wa-color: #25D366;
+  --wa-hover: #1EBE5D;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-soft);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, .brand-font {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+/* Banner Prototipe */
+.prototype-banner {
+  background-color: #FEF3C7;
+  color: #92400E;
+  font-size: 0.825rem;
+  font-weight: 500;
+  padding: 6px 16px;
+  text-align: center;
+  border-bottom: 1px solid #FDE68A;
+}
+
+.prototype-banner i {
+  color: #D97706;
+}
+
+/* Navbar */
+.navbar-custom {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid rgba(23, 107, 69, 0.1);
+  padding: 14px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.navbar-brand {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--primary-color) !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-brand .brand-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  background-color: var(--accent-light);
+  color: var(--primary-color);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #374151 !important;
+  padding: 8px 16px !important;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-color) !important;
+  background-color: var(--accent-light);
+}
+
+/* Buttons */
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-custom:hover, .btn-primary-custom:focus {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(23, 107, 69, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-outline-custom {
+  color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
+  background-color: transparent;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 9px 18px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--accent-light);
+  color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-wa {
+  background-color: var(--wa-color);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.btn-wa:hover {
+  background-color: var(--wa-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #F0F7F3 0%, #FFFFFF 100%);
+  padding: 56px 0 48px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-heading);
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Search Box Container */
+.search-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(23, 107, 69, 0.12);
+}
+
+.search-input {
+  border: none;
+  font-size: 1rem;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: #F8FAF8;
+}
+
+.keyword-badge {
+  display: inline-block;
+  background-color: #FFFFFF;
+  color: var(--primary-color);
+  border: 1px solid #D1E3D8;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 3px;
+  transition: all 0.2s;
+}
+
+.keyword-badge:hover {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  border-color: var(--primary-color);
+}
+
+/* Category Cards */
+.category-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-md);
+  background-color: #FBFCFA;
+}
+
+.category-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background-color: var(--accent-light);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 0 auto 14px;
+  transition: all 0.2s;
+}
+
+.category-card:hover .category-icon-box {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  transform: scale(1.08);
+}
+
+.category-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+
+.category-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Business Card */
+.business-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.business-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: #C6DFC8;
+}
+
+.business-card-img-wrapper {
+  position: relative;
+  height: 180px;
+  background-color: #E2E8F0;
+  overflow: hidden;
+}
+
+.business-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.business-card:hover .business-card-img {
+  transform: scale(1.04);
+}
+
+.business-card-body {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-kelurahan {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  background-color: #EBF3ED;
+  color: var(--primary-color);
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.business-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 10px 0 6px;
+  color: var(--text-heading);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.business-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.business-card-footer {
+  padding-top: 12px;
+  border-top: 1px solid #F1F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Status Badges */
+.badge-status {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.badge-approved {
+  background-color: #DEF7EC;
+  color: #03543F;
+}
+
+.badge-pending {
+  background-color: #FEF08A;
+  color: #854D0E;
+}
+
+.badge-rejected {
+  background-color: #FDE8E8;
+  color: #9B1C1C;
+}
+
+.badge-inactive {
+  background-color: #F1F5F9;
+  color: #475569;
+}
+
+.badge-draft {
+  background-color: #E2E8F0;
+  color: #334155;
+}
+
+/* Step / Cara Kerja */
+.step-number {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(23, 107, 69, 0.3);
+}
+
+/* Detail Page Specific */
+.detail-header-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.detail-img-main {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.info-sidebar-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Dashboard Styles */
+.dashboard-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s;
+}
+
+.dashboard-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+/* Footer */
+.footer-custom {
+  background-color: #133827;
+  color: #D1E3D8;
+  margin-top: auto;
+  padding: 48px 0 24px;
+  border-top: 3px solid var(--accent-color);
+}
+
+.footer-custom a {
+  color: #D1E3D8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-custom a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  .search-card {
+    padding: 12px;
+  }
+}
